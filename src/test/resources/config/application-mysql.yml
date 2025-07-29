@@ -1,0 +1,28 @@
+# ===================================================================
+# Spring Boot Configuration for the integration test profile
+# ===================================================================
+
+# TEST-DATABASE-COMMON
+test-datasource: &test-datasource
+  datasource:
+    url: jdbc:tc:mysql:8.0://localhost:3306/realtime?useUnicode=true&charset=utf8mb4&characterEncoding=utf8&zeroDateTimeBehavior=convertToNull&serverTimezone=Asia/Seoul
+    driver-class-name: org.testcontainers.jdbc.ContainerDatabaseDriver
+    hikari:
+      minimum-idle: 1
+      maximum-pool-size: 1
+
+test-jpa: &test-jpa
+  database: mysql
+  database-platform: com.goofy.realtime.config.database.CustomMySQLDialect
+  show-sql: true
+  properties:
+    hibernate.format_sql: true
+    hibernate.hbm2ddl.auto: none
+    hibernate.jdbc.time_zone: Asia/Seoul
+
+# DATABASE
+core:
+  master: *test-datasource
+  slave: *test-datasource
+  jpa: *test-jpa
+  maximum-jdbc-thread-pool-size:
