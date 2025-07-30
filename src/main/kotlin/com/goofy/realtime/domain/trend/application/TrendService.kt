@@ -1,5 +1,6 @@
 package com.goofy.realtime.domain.trend.application
 
+import com.goofy.realtime.common.dto.PageRequest
 import com.goofy.realtime.common.extension.executes
 import com.goofy.realtime.config.database.TransactionTemplates
 import com.goofy.realtime.domain.trend.vo.TrendId
@@ -9,6 +10,7 @@ import com.goofy.realtime.outbound.dto.TrendCreateRequest
 import com.goofy.realtime.outbound.dto.TrendUpdateRequest
 import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.withContext
+import org.springframework.data.domain.Page
 import org.springframework.data.repository.findByIdOrNull
 import org.springframework.stereotype.Service
 
@@ -29,9 +31,9 @@ class TrendService(
         }
     }
 
-    suspend fun getTrends(): List<Trend> {
+    suspend fun getTrends(pageRequest: PageRequest): Page<Trend> {
         return withContext(Dispatchers.IO) {
-            trendJpaRepository.findAll()
+            trendJpaRepository.findAll(pageRequest.toDefault())
         }
     }
 

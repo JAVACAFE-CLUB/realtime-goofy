@@ -1,7 +1,10 @@
 package com.goofy.realtime.outbound.rest
 
+import com.goofy.realtime.common.dto.PageRequest
+import com.goofy.realtime.common.dto.PageResponse
 import com.goofy.realtime.common.dto.Response
 import com.goofy.realtime.common.extension.wrapOk
+import com.goofy.realtime.common.extension.wrapPage
 import com.goofy.realtime.common.extension.wrapVoid
 import com.goofy.realtime.domain.trend.application.TrendService
 import com.goofy.realtime.domain.trend.vo.TrendId
@@ -10,6 +13,7 @@ import com.goofy.realtime.outbound.dto.TrendResponse
 import com.goofy.realtime.outbound.dto.TrendUpdateRequest
 import io.swagger.v3.oas.annotations.Operation
 import io.swagger.v3.oas.annotations.tags.Tag
+import org.springdoc.core.annotations.ParameterObject
 import org.springframework.http.MediaType
 import org.springframework.http.ResponseEntity
 import org.springframework.web.bind.annotation.DeleteMapping
@@ -39,10 +43,12 @@ class TrendResource(
 
     @Operation(summary = "트렌드 목록 조회")
     @GetMapping("/api/v1/trends")
-    suspend fun getTrends(): ResponseEntity<Response<List<TrendResponse>>> {
-        return trendService.getTrends()
+    suspend fun getTrends(
+        @ParameterObject pageRequest: PageRequest,
+    ): PageResponse<TrendResponse> {
+        return trendService.getTrends(pageRequest)
             .map { trend -> TrendResponse.from(trend) }
-            .wrapOk()
+            .wrapPage()
     }
 
     @Operation(summary = "트렌드 단건 조회")
