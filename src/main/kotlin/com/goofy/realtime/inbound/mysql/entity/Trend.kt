@@ -13,13 +13,13 @@ import jakarta.persistence.Table
 @Table(name = "trend")
 class Trend(
     @Column(name = "title")
-    val title: String,
+    var title: String,
 
     @Column(name = "content")
-    val content: String,
+    var content: String,
 
     @Column(name = "seq")
-    val seq: Int,
+    var seq: Int,
 ) : BaseEntity.UpdateWithoutId() {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
