@@ -1,7 +1,7 @@
 package com.goofy.realtime.outbound.rest
 
 import com.goofy.realtime.common.extension.wrapOk
-import com.goofy.realtime.common.model.Response
+import com.goofy.realtime.common.dto.Response
 import io.swagger.v3.oas.annotations.tags.Tag
 import org.springframework.core.env.Environment
 import org.springframework.http.HttpStatus

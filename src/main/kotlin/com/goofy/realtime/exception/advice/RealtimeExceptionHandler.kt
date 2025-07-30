@@ -1,6 +1,6 @@
 package com.goofy.realtime.exception.advice
 
-import com.goofy.realtime.common.model.ErrorResponse
+import com.goofy.realtime.common.dto.ErrorResponse
 import com.goofy.realtime.exception.RealtimeException
 import io.github.oshai.kotlinlogging.KotlinLogging
 import org.springframework.http.ResponseEntity

@@ -1,4 +1,4 @@
-package com.goofy.realtime.common.model
+package com.goofy.realtime.common.dto
 
 data class Response<T>(
     val data: T
