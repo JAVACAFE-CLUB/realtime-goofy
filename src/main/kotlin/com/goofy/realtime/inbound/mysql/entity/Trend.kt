@@ -1,0 +1,30 @@
+package com.goofy.realtime.inbound.mysql.entity
+
+import com.goofy.realtime.domain.trend.vo.TrendId
+import com.goofy.realtime.inbound.mysql.common.BaseEntity
+import jakarta.persistence.Column
+import jakarta.persistence.Entity
+import jakarta.persistence.GeneratedValue
+import jakarta.persistence.GenerationType
+import jakarta.persistence.Id
+import jakarta.persistence.Table
+
+@Entity
+@Table(name = "trend")
+class Trend(
+    @Column(name = "title")
+    val title: String,
+
+    @Column(name = "content")
+    val content: String,
+
+    @Column(name = "seq")
+    val seq: Int,
+) : BaseEntity.UpdateWithoutId() {
+    @Id
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
+    private val _id: Long? = null
+
+    val id: TrendId
+        get() = TrendId(checkNotNull(_id) { "저장되지 않은 엔티티의 id 조회 입니다." })
+}

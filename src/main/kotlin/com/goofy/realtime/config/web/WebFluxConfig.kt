@@ -1,8 +1,11 @@
 package com.goofy.realtime.config.web
 
 import com.fasterxml.jackson.databind.ObjectMapper
+import com.goofy.realtime.common.model.DelegatedValue
+import com.goofy.realtime.domain.trend.vo.TrendId
 import org.springframework.context.annotation.Configuration
 import org.springframework.core.ReactiveAdapterRegistry
+import org.springframework.core.convert.converter.Converter
 import org.springframework.data.web.ReactivePageableHandlerMethodArgumentResolver
 import org.springframework.data.web.ReactiveSortHandlerMethodArgumentResolver
 import org.springframework.format.FormatterRegistry
@@ -57,5 +60,19 @@ class WebFluxConfig(
         registrar.setUseIsoFormat(true)
         registrar.registerFormatters(registry)
         super.addFormatters(registry)
+
+        registry.addConverter(
+            String::class.java,
+            TrendId::class.java,
+            StringToDelegatedLongValueConverter(::TrendId),
+        )
+    }
+}
+
+class StringToDelegatedLongValueConverter<T : DelegatedValue<Long>>(
+    private val factory: (Long) -> T
+) : Converter<String, T> {
+    override fun convert(source: String): T {
+        return factory(source.toLong())
     }
 }
