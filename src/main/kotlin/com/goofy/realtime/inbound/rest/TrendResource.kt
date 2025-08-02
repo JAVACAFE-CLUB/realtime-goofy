@@ -54,9 +54,9 @@ class TrendResource(
     @Operation(summary = "트렌드 단건 조회")
     @GetMapping("/api/v1/trends/{id}")
     suspend fun getTrend(
-        @PathVariable id: Long
+        @PathVariable id: TrendId
     ): ResponseEntity<Response<TrendResponse>> {
-        return trendService.getTrend(TrendId(id))
+        return trendService.getTrend(id)
             .let { trend -> TrendResponse.from(trend) }
             .wrapOk()
     }
@@ -77,7 +77,6 @@ class TrendResource(
     suspend fun deleteTrend(
         @PathVariable id: TrendId
     ): ResponseEntity<Unit> {
-        trendService.deleteTrend(id)
-        return Unit.wrapVoid()
+        return trendService.deleteTrend(id).wrapVoid()
     }
 }
