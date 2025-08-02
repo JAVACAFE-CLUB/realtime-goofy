@@ -1,4 +1,4 @@
-package com.goofy.realtime.outbound.rest
+package com.goofy.realtime.inbound.rest
 
 import com.goofy.realtime.inbound.rest.HealthResource
 import io.kotest.matchers.shouldBe
