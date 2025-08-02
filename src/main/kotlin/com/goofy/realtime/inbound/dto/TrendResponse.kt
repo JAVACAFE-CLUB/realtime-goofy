@@ -1,7 +1,7 @@
-package com.goofy.realtime.outbound.dto
+package com.goofy.realtime.inbound.dto
 
 import com.goofy.realtime.domain.trend.vo.TrendId
-import com.goofy.realtime.inbound.mysql.entity.Trend
+import com.goofy.realtime.outbound.mysql.entity.Trend
 import java.time.LocalDateTime
 
 data class TrendResponse(

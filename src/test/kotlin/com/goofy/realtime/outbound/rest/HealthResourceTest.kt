@@ -1,5 +1,6 @@
 package com.goofy.realtime.outbound.rest
 
+import com.goofy.realtime.inbound.rest.HealthResource
 import io.kotest.matchers.shouldBe
 import io.mockk.every
 import io.mockk.mockk

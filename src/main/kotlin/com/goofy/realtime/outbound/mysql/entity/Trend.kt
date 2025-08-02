@@ -1,7 +1,7 @@
-package com.goofy.realtime.inbound.mysql.entity
+package com.goofy.realtime.outbound.mysql.entity
 
 import com.goofy.realtime.domain.trend.vo.TrendId
-import com.goofy.realtime.inbound.mysql.common.BaseEntity
+import com.goofy.realtime.outbound.mysql.common.BaseEntity
 import jakarta.persistence.Column
 import jakarta.persistence.Entity
 import jakarta.persistence.GeneratedValue

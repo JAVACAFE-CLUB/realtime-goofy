@@ -3,9 +3,10 @@ package com.goofy.realtime.outbound.rest
 import com.goofy.realtime.common.dto.PageRequest
 import com.goofy.realtime.domain.trend.application.TrendService
 import com.goofy.realtime.domain.trend.vo.TrendId
-import com.goofy.realtime.inbound.mysql.entity.Trend
-import com.goofy.realtime.outbound.dto.TrendCreateRequest
-import com.goofy.realtime.outbound.dto.TrendUpdateRequest
+import com.goofy.realtime.outbound.mysql.entity.Trend
+import com.goofy.realtime.inbound.rest.TrendResource
+import com.goofy.realtime.inbound.dto.TrendCreateRequest
+import com.goofy.realtime.inbound.dto.TrendUpdateRequest
 import io.kotest.matchers.shouldBe
 import io.mockk.coEvery
 import io.mockk.coVerify

@@ -1,6 +1,6 @@
-package com.goofy.realtime.inbound.mysql.repository
+package com.goofy.realtime.outbound.mysql.repository
 
-import com.goofy.realtime.inbound.mysql.entity.Trend
+import com.goofy.realtime.outbound.mysql.entity.Trend
 import org.springframework.data.jpa.repository.JpaRepository
 import org.springframework.stereotype.Repository
 

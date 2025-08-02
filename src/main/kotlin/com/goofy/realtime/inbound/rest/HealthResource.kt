@@ -1,4 +1,4 @@
-package com.goofy.realtime.outbound.rest
+package com.goofy.realtime.inbound.rest
 
 import com.goofy.realtime.common.extension.wrapOk
 import com.goofy.realtime.common.dto.Response

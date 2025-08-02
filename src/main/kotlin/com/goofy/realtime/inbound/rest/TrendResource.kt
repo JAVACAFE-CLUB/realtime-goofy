@@ -1,4 +1,4 @@
-package com.goofy.realtime.outbound.rest
+package com.goofy.realtime.inbound.rest
 
 import com.goofy.realtime.common.dto.PageRequest
 import com.goofy.realtime.common.dto.PageResponse
@@ -8,9 +8,9 @@ import com.goofy.realtime.common.extension.wrapPage
 import com.goofy.realtime.common.extension.wrapVoid
 import com.goofy.realtime.domain.trend.application.TrendService
 import com.goofy.realtime.domain.trend.vo.TrendId
-import com.goofy.realtime.outbound.dto.TrendCreateRequest
-import com.goofy.realtime.outbound.dto.TrendResponse
-import com.goofy.realtime.outbound.dto.TrendUpdateRequest
+import com.goofy.realtime.inbound.dto.TrendCreateRequest
+import com.goofy.realtime.inbound.dto.TrendResponse
+import com.goofy.realtime.inbound.dto.TrendUpdateRequest
 import io.swagger.v3.oas.annotations.Operation
 import io.swagger.v3.oas.annotations.tags.Tag
 import org.springdoc.core.annotations.ParameterObject

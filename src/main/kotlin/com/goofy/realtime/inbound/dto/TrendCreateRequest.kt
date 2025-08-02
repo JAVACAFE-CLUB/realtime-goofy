@@ -1,4 +1,4 @@
-package com.goofy.realtime.outbound.dto
+package com.goofy.realtime.inbound.dto
 
 data class TrendCreateRequest(
     val title: String,

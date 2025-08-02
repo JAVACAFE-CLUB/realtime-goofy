@@ -4,10 +4,10 @@ import com.goofy.realtime.common.dto.PageRequest
 import com.goofy.realtime.common.extension.executes
 import com.goofy.realtime.config.database.TransactionTemplates
 import com.goofy.realtime.domain.trend.vo.TrendId
-import com.goofy.realtime.inbound.mysql.entity.Trend
-import com.goofy.realtime.inbound.mysql.repository.TrendJpaRepository
-import com.goofy.realtime.outbound.dto.TrendCreateRequest
-import com.goofy.realtime.outbound.dto.TrendUpdateRequest
+import com.goofy.realtime.outbound.mysql.entity.Trend
+import com.goofy.realtime.outbound.mysql.repository.TrendJpaRepository
+import com.goofy.realtime.inbound.dto.TrendCreateRequest
+import com.goofy.realtime.inbound.dto.TrendUpdateRequest
 import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.withContext
 import org.springframework.data.domain.Page

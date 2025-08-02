@@ -1,4 +1,4 @@
-package com.goofy.realtime.inbound.mysql.common
+package com.goofy.realtime.outbound.mysql.common
 
 import jakarta.persistence.Column
 import jakarta.persistence.EntityListeners
