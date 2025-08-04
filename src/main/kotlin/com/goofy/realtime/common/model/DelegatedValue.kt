@@ -1,7 +1,7 @@
 package com.goofy.realtime.common.model
 
 abstract class DelegatedValue<T>(
-    open val value: T,
+    val value: T,
 ) {
     override fun toString(): String {
         return value.toString()
