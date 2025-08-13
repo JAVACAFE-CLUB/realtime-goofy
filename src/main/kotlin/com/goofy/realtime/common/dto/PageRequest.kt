@@ -1,10 +1,10 @@
-package com.goofy.realtime.common.model
+package com.goofy.realtime.common.dto
 
 import org.springframework.data.domain.PageRequest
 import org.springframework.data.domain.Pageable
 import org.springframework.data.domain.Sort
 
-data class RealtimePageRequest(
+data class PageRequest(
     /** page, 0부터 시작 */
     val page: Int?,
     /** size, default is 10 */

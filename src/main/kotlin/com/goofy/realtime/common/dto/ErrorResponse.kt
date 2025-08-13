@@ -1,4 +1,4 @@
-package com.goofy.realtime.common.model
+package com.goofy.realtime.common.dto
 
 import com.goofy.realtime.exception.ErrorCode
 import jakarta.validation.ConstraintViolationException

@@ -1,4 +1,4 @@
-package com.goofy.realtime.common.model
+package com.goofy.realtime.common.dto
 
 import org.springframework.data.domain.Slice
 import org.springframework.data.domain.Sort

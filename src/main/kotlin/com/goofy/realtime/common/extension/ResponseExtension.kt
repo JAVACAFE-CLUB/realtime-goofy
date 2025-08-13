@@ -1,7 +1,7 @@
 package com.goofy.realtime.common.extension
 
-import com.goofy.realtime.common.model.PageResponse
-import com.goofy.realtime.common.model.Response
+import com.goofy.realtime.common.dto.PageResponse
+import com.goofy.realtime.common.dto.Response
 import org.springframework.data.domain.Page
 import org.springframework.http.HttpHeaders
 import org.springframework.http.HttpStatus

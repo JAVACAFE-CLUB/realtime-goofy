@@ -1,6 +1,6 @@
 package com.goofy.realtime.exception.advice
 
-import com.goofy.realtime.common.model.ErrorResponse
+import com.goofy.realtime.common.dto.ErrorResponse
 import io.github.oshai.kotlinlogging.KotlinLogging
 import jakarta.validation.ConstraintViolationException
 import kotlinx.coroutines.CancellationException

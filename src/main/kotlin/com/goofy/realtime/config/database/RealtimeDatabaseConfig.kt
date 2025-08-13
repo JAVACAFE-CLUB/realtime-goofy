@@ -26,7 +26,7 @@ import javax.sql.DataSource
 @EnableTransactionManagement
 @EnableJpaRepositories(
     basePackages = [
-        "com.goofy.realtime.domain"
+        "com.goofy.realtime.outbound.mysql"
     ],
     entityManagerFactoryRef = "realtimeEntityManager",
     transactionManagerRef = "realtimeTransactionManager"
@@ -74,7 +74,7 @@ class RealtimeDatabaseConfig {
     ): LocalContainerEntityManagerFactoryBean {
         return entityManagerFactoryBuilder
             .dataSource(realtimeMasterHikariDataSource)
-            .packages("com.goofy.realtime.domain")
+            .packages("com.goofy.realtime.outbound.mysql")
             .properties(mapOf(AvailableSettings.BEAN_CONTAINER to SpringBeanContainer(configurableListableBeanFactory)))
             .build()
     }
