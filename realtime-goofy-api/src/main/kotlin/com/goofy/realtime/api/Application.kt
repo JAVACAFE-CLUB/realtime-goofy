@@ -36,6 +36,5 @@ fun main(args: Array<String>) {
 
 fun init() {
     /** Setting the Default TimeZone */
-    println("엥?")
     TimeZone.setDefault(TimeZone.getTimeZone(Zone.KST))
 }
