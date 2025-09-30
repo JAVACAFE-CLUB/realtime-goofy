@@ -10,3 +10,16 @@
 - 서빙 시스템 : realtime-goofy-api (port: 8080)
 
 각 모듈은 독립적으로 배포 가능합니다.
+
+### 수집 시스템 : realtime-goofy-collector (port: 8081)
+
+
+### 정제 시스템 : realtime-goofy-cleansing (port: 8082)
+
+
+### 색인 시스템 : realtime-goofy-indexer (port: 8083)
+
+
+### 서빙 시스템 : realtime-goofy-api (port: 8080)
+
+
