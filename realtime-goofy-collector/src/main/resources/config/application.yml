@@ -1,0 +1,29 @@
+# ===================================================================
+# Spring Boot Configuration for the default profile
+# ===================================================================
+
+# SERVER
+server:
+  port: 8081
+  http2:
+    enabled: true
+  shutdown: graceful # timeout configuration property : spring.lifecycle.timeout-per-shutdown-phase
+
+logging:
+  level:
+    root: INFO
+
+# SPRING
+spring:
+  lifecycle:
+    timeout-per-shutdown-phase: 5s # format : https://docs.spring.io/spring-boot/docs/current/reference/html/spring-boot-features.html#boot-features-external-config-conversion-duration
+  application:
+    name: realtime-goofy-collector
+  output:
+    ansi:
+      enabled: always
+  webflux:
+    multipart:
+      max-in-memory-size: 1024KB
+      max-file-size: 5MB
+      max-request-size: 10MB
